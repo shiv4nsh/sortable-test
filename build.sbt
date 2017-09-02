@@ -1,4 +1,4 @@
-name := "sortableTest"
+name := "sortable-test"
 
 version := "1.0"
 
