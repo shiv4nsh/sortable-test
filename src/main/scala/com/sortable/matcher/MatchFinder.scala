@@ -4,12 +4,11 @@ import java.io.PrintWriter
 
 import com.sortable.models.{Listing, Product, Results}
 import org.json4s._
-import org.json4s.jackson.Serialization
-import org.json4s.jackson.Serialization.write
 import org.json4s.native.JsonMethods._
+import org.json4s.native.Serialization
+import org.json4s.native.Serialization.write
 
 import scala.io.Source
-
 
 /**
   * Created by shiv4nsh on 31/8/17.
@@ -62,7 +61,7 @@ trait MatchFinder {
       val listToBeMatched = List(
         splitTheData(product.manufacturer.toLowerCase.replaceAll("fuji", "fuji-")),
         splitTheData(product.family),
-        splitTheData(product.model).flatten)
+        splitTheData(product.model)).flatten
 
       val func = (listing: Listing) => {
         val titleAsList = splitTheData(listing.title)
